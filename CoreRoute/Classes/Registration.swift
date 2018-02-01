@@ -1,20 +1,26 @@
 import Foundation
 
 public final class Registration: Configurable {
-    public let route: AbstractRoute
+    public let routePattern: String
     public let destination: Any
+    public let routeType: AbstractRoute.Type?
+    public let route: AbstractRoute?
     
     public let configuration = Configuration()
     
     var context: [String: Any] = [:]
     
-    init<R: Route>(route: R) {
-        self.route = route
-        self.destination = route.destination
+    init<R: Route>(routeType: R.Type) {
+        self.routePattern = routeType.routePattern
+        self.routeType = routeType
+        self.destination = routeType.destination
+        self.route = nil
     }
     
     init(route: AbstractRoute, destination: Any) {
-        self.route = route
+        self.routePattern = route.routePath
+        self.routeType = type(of: route)
         self.destination = destination
+        self.route = route
     }
 }

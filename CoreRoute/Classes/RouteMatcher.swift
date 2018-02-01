@@ -21,7 +21,7 @@ public class RouteMatcher: RouteMatching {
     
     
     private func match(registration: Registration, compareTo calledRoute: AbstractRoute) -> RouteMatch? {
-        let (registrationPath, registrationQueryParameters) = stripQueryParameters(from: registration.route.routePath)
+        let (registrationPath, registrationQueryParameters) = stripQueryParameters(from: registration.routePattern)
         let (calledPath, calledQueryParameters) = stripQueryParameters(from: calledRoute.routePath)
         
         var routeCandidateRegexPattern = registrationPath
@@ -47,6 +47,12 @@ public class RouteMatcher: RouteMatching {
         var parameters: [String: Any] = [:]
         
         let pathParameters = extractParameters(from: calledRoute, routeParameterNames: routeParameterNames, regexPattern: routeCandidateRegexPattern)
+        
+        if let builtParameters = (registration.routeType as? ParametersAware.Type)?.buildParameters(with: pathParameters) {
+            parameters.merge(builtParameters) { (_, newValue) -> Any in
+                return newValue
+            }
+        }
         
         if let routeParameters = (registration.route as? ParametersAware)?.parameters {
             parameters.merge(routeParameters) { (_, newValue) -> Any in
