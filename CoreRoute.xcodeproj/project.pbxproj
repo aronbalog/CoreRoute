@@ -26,6 +26,7 @@
 		3828343A1FD713D30016F459 /* Configuration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382834391FD713D30016F459 /* Configuration.swift */; };
 		3828343C1FD7141F0016F459 /* ProtectionSpace.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828343B1FD7141F0016F459 /* ProtectionSpace.swift */; };
 		3828343E1FD714310016F459 /* ParametersAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3828343D1FD714310016F459 /* ParametersAware.swift */; };
+		38C4EBAE2025333D00288170 /* DestinationAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C4EBAD2025333D00288170 /* DestinationAware.swift */; };
 		38C9F7671FE1919A0086782D /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C9F7661FE1919A0086782D /* String+Utility.swift */; };
 		38C9F7691FE191BB0086782D /* Dictionary+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C9F7681FE191BB0086782D /* Dictionary+Utility.swift */; };
 		38C9F76C1FE1D6850086782D /* ConfigurationAware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38C9F76B1FE1D6850086782D /* ConfigurationAware.swift */; };
@@ -73,6 +74,7 @@
 		382834391FD713D30016F459 /* Configuration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configuration.swift; sourceTree = "<group>"; };
 		3828343B1FD7141F0016F459 /* ProtectionSpace.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProtectionSpace.swift; sourceTree = "<group>"; };
 		3828343D1FD714310016F459 /* ParametersAware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParametersAware.swift; sourceTree = "<group>"; };
+		38C4EBAD2025333D00288170 /* DestinationAware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DestinationAware.swift; sourceTree = "<group>"; };
 		38C9F7641FE18EA80086782D /* DefaultRouteMatcherSpec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultRouteMatcherSpec.swift; sourceTree = "<group>"; };
 		38C9F7661FE1919A0086782D /* String+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
 		38C9F7681FE191BB0086782D /* Dictionary+Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Utility.swift"; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 				3828343D1FD714310016F459 /* ParametersAware.swift */,
 				38C9F76B1FE1D6850086782D /* ConfigurationAware.swift */,
 				38C9F76D1FE1D6C10086782D /* Configurable.swift */,
+				38C4EBAD2025333D00288170 /* DestinationAware.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				382834201FD60BB90016F459 /* String+AbstractRoute.swift in Sources */,
 				382834311FD64B440016F459 /* RouteMatcher.swift in Sources */,
 				382834241FD60CFC0016F459 /* Registration.swift in Sources */,
+				38C4EBAE2025333D00288170 /* DestinationAware.swift in Sources */,
 				3828343A1FD713D30016F459 /* Configuration.swift in Sources */,
 				382834271FD60D160016F459 /* RouteMatch.swift in Sources */,
 				3828341B1FD609740016F459 /* AbstractRoute.swift in Sources */,

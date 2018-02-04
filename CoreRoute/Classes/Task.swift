@@ -85,9 +85,16 @@ public class Task<R: AbstractRoute, D>: Resultable {
         requestConfiguration.parameters?.forEach { (item) in
             _parameters[item.key] = item.value
         }
+                
         let parameters = _parameters.count > 0 ? _parameters : nil
         
-        let response = Response(route: route, destination: routeMatch.registration.destination as! D, parameters: parameters, context: registration.context)
+        let _destination: D? = {
+            return routeMatch.registration.buildDestination?(_parameters) as? D
+        }()
+        
+        guard let destination = _destination else { fatalError("Destination cannot be determined") }
+        
+        let response = Response(route: route, destination: destination, parameters: parameters, context: registration.context)
         
         responseBlock(response)
         

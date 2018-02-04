@@ -1,10 +1,6 @@
 import Foundation
 
-public protocol Route: AbstractRoute, ParametersAware {
-    associatedtype Destination = Any
-    
-    static var destination: Destination { get }
-    
+public protocol Route: AbstractRoute, DestinationAware, ParametersAware {
     static var routePattern: String { get }
 }
 
