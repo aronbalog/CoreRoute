@@ -2,7 +2,7 @@ import Foundation
 
 public class Response<R: AbstractRoute, D> {
     public let route: R
-    public let destination: D
+    public let destination: D?
     public let parameters: [String: Any]?
     public let context: [String: Any]
     

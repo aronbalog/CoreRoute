@@ -9,9 +9,9 @@ enum AbstractRoute: String {
 }
 
 struct MockRoute2: CoreRoute.Route {
-    typealias Destination = String
+    static var destination: String = "MockRoute-destination"
     
-    var destination: String = "MockRoute-destination"
+    typealias Destination = String
     
     var routePath: String = "mock-route-2"
     static var routePattern: String = "mock-route-2"
@@ -24,7 +24,7 @@ struct MockRoute2: CoreRoute.Route {
 struct MockRoute3: CoreRoute.Route {
     typealias Destination = String
     
-    var destination: String = "MockRoute-destination"
+    static var destination: String = "MockRoute-destination"
     
     var routePath: String = "mock-route/-3"
     static var routePattern: String = "mock-route/-<id>"

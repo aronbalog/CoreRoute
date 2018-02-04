@@ -89,10 +89,10 @@ public class Task<R: AbstractRoute, D>: Resultable {
         let parameters = _parameters.count > 0 ? _parameters : nil
         
         let _destination: D? = {
-            return routeMatch.registration.buildDestination?(_parameters) as? D
+            return (routeMatch.registration.buildDestination?(_parameters) as? D) ?? (routeMatch.registration.destination as? D)
         }()
         
-        guard let destination = _destination else { fatalError("Destination cannot be determined") }
+        guard let destination = _destination else { fatalError("Unknown route destination") }
         
         let response = Response(route: route, destination: destination, parameters: parameters, context: registration.context)
         
